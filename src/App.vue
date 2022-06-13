@@ -10,14 +10,12 @@ import SocialIcons from "@/components/SocialIcons.vue";
 
     <div class="wrapper">
       <h3 class="wouternet">wouter <span class="primary">on the</span> net</h3>
-
-      <p>Sound alchemist, Freelance Java/JS Developer, Forever learning...</p>
       <img
         src="./assets/wouter_profileImage.jpg"
         alt="Wouter Vernaillen Profile Image"
         class="profileImage"
       />
-      <p>Wouter Vernaillen</p>
+      <p>Sound alchemist, Freelance Java/JS Developer, Forever learning...</p>
       <SocialIcons />
     </div>
   </header>
@@ -57,13 +55,13 @@ header {
 a,
 .primary {
   text-decoration: none;
-  color: hsla(53, 70.5%, 35.9%, 0.6);
+  color: hsla(53, 70.5%, 35.9%, 1);
   transition: 0.4s;
 }
 
 @media (hover: hover) {
   a:hover {
-    color: hsla(53, 70.5%, 35.9%, 1);
+    color: hsla(53, 70.5%, 35.9%, 0.8);
   }
 }
 
