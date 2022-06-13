@@ -26,3 +26,6 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+.vite-ssg-temp/favicon.ico
+.vite-ssg-temp/main.mjs
+.vite-ssg-temp/assets/style.eec5519e.css

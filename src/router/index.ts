@@ -1,14 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router";
+const routes = [
+  {
+    path: "/",
+    name: "home",
+    redirect: "/links",
+  },
+  {
+    path: "/links",
+    name: "links",
+    component: () => import("../views/LinksView.vue"),
+  },
+];
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: "/links",
-      name: "links",
-      component: () => import("../views/LinksView.vue"),
-    },
-  ],
-});
-
-export default router;
+export default routes;

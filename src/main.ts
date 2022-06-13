@@ -1,13 +1,16 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
-
+// src/main.ts
+import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
-import router from "./router";
+import routes from "./router";
 
-const app = createApp(App);
-
-app.use(createPinia());
-app.use(router);
-router.push("links");
-
-app.mount("#app");
+// `export const createApp` is required instead of the original `createApp(App).mount('#app')`
+export const createApp = ViteSSG(
+  // the root component
+  App,
+  // vue-router options
+  { routes },
+  // function to have custom setups
+  ({ router }) => {
+    router.push("links");
+  }
+);
