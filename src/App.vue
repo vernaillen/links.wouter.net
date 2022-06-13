@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { RouterView } from "vue-router";
+import HelloWorld from "@/components/HelloWorld.vue";
+import IconLogo from "@/components/icons/IconLogo.vue";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <IconLogo class="logo" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <HelloWorld msg="wouter on the net" />
     </div>
   </header>
 
@@ -21,7 +17,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
 #app {
   max-width: 1280px;
@@ -42,9 +38,9 @@ header {
 }
 
 a,
-.green {
+.primary {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: hsla(53, 70.5%, 35.9%, 1);
   transition: 0.4s;
 }
 
@@ -104,7 +100,7 @@ nav a:first-of-type {
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin: 0 2rem 3.5rem 0;
   }
 
   nav {

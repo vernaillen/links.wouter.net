@@ -5,12 +5,22 @@
     </i>
     <div class="details">
       <h3>
-        <slot name="heading"></slot>
+        <a :href="url" target="_blank"> <slot name="heading"></slot></a> -
+        <span class="sub"><slot name="subheading"></slot> </span>
       </h3>
       <slot></slot>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+defineProps({
+  url: {
+    type: String,
+    required: true,
+  },
+});
+</script>
 
 <style scoped>
 .item {
@@ -33,10 +43,14 @@ i {
   color: var(--color-text);
 }
 
-h3 {
+h3,
+h3 a {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
+}
+h3 .sub {
+  font-size: 1.1rem;
   color: var(--color-heading);
 }
 
@@ -58,7 +72,7 @@ h3 {
   }
 
   .item:before {
-    content: ' ';
+    content: " ";
     border-left: 1px solid var(--color-border);
     position: absolute;
     left: 0;
@@ -67,7 +81,7 @@ h3 {
   }
 
   .item:after {
-    content: ' ';
+    content: " ";
     border-left: 1px solid var(--color-border);
     position: absolute;
     left: 0;

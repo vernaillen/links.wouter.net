@@ -1,17 +1,16 @@
 <script setup lang="ts">
 defineProps<{
-  msg: string
-}>()
+  msg: string;
+}>();
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a target="_blank" href="https://vitejs.dev/">Vite</a> +
-      <a target="_blank" href="https://vuejs.org/">Vue 3</a>. What's next?
-    </h3>
+    <h1>
+      <span class="primary">wouter</span> on the
+      <span class="primary">net</span>
+    </h1>
+    <h3>links & socials</h3>
   </div>
 </template>
 
