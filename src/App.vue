@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
 import IconLogo from "@/components/icons/IconLogo.vue";
+import SocialIcons from "@/components/SocialIcons.vue";
 </script>
 
 <template>
@@ -9,7 +9,16 @@ import IconLogo from "@/components/icons/IconLogo.vue";
     <IconLogo class="logo" />
 
     <div class="wrapper">
-      <HelloWorld msg="wouter on the net" />
+      <h3 class="wouternet">wouter <span class="primary">on the</span> net</h3>
+
+      <p>Sound alchemist, Freelance Java/JS Developer, Forever learning...</p>
+      <img
+        src="./assets/wouter_profileImage.jpg"
+        alt="Wouter Vernaillen Profile Image"
+        class="profileImage"
+      />
+      <p>Wouter Vernaillen</p>
+      <SocialIcons />
     </div>
   </header>
 
@@ -20,9 +29,9 @@ import IconLogo from "@/components/icons/IconLogo.vue";
 @import "@/assets/base.css";
 
 #app {
-  max-width: 1280px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
 
   font-weight: normal;
 }
@@ -30,86 +39,49 @@ import IconLogo from "@/components/icons/IconLogo.vue";
 header {
   line-height: 1.5;
   max-height: 100vh;
+  margin-bottom: 60px;
 }
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.6rem;
+}
+
+.profileImage {
+  border-radius: 25%;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
 }
 
 a,
 .primary {
   text-decoration: none;
-  color: hsla(53, 70.5%, 35.9%, 1);
+  color: hsla(53, 70.5%, 35.9%, 0.6);
   transition: 0.4s;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    color: hsla(53, 70.5%, 35.9%, 1);
   }
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
+.wrapper {
   text-align: center;
-  margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+h1 {
+  font-weight: 500;
+  font-size: 2rem;
 }
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+h3 {
+  font-size: 1rem;
 }
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+h3.wouternet {
+  margin-bottom: 40px;
 }
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 3.5rem 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+p {
+  padding: 15px;
 }
 </style>

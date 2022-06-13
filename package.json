@@ -14,6 +14,9 @@
     "prepushtest": "pnpm run lint && pnpm run type-check && pnpm run build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0",
     "pinia": "^2.0.14",
     "vue": "^3.2.37"
   },
