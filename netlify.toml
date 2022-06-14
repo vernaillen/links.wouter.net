@@ -11,6 +11,18 @@
   to = "/index.html"
   status = 200
 
+[[redirects]]
+  from = "https://wouter.net"
+  to = "https://links.wouter.net"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.wouter.net"
+  to = "https://links.wouter.net"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/manifest.webmanifest"
   [headers.values]
