@@ -24,7 +24,7 @@ const props = defineProps({
   },
 });
 const openUrl = () => {
-  document.location.href = props.url;
+  window.open(props.url, "_blank");
 };
 </script>
 
