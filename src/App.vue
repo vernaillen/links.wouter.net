@@ -37,7 +37,7 @@ import SocialIcons from "@/components/SocialIcons.vue";
 header {
   line-height: 1.5;
   max-height: 100vh;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .logo {
