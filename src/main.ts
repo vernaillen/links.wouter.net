@@ -1,7 +1,7 @@
 // src/main.ts
 import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
-import routes from "./router";
+import LinksView from "./views/LinksView.vue";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -13,7 +13,14 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(faInstagram, faLinkedin, faGithub, faTwitter);
 
-export const createApp = ViteSSG(App, { routes }, ({ app, router }) => {
+const routes = [
+  {
+    path: "/",
+    name: "links",
+    component: LinksView,
+  },
+];
+
+export const createApp = ViteSSG(App, { routes }, ({ app }) => {
   app.component("font-awesome-icon", FontAwesomeIcon);
-  router.push("links");
 });
