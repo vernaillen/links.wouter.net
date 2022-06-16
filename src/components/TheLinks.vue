@@ -1,23 +1,15 @@
 <script setup lang="ts">
 import LinkItem from "./LinkItem.vue";
-import ToolingIcon from "./icons/IconTooling.vue";
-import EcosystemIcon from "./icons/IconEcosystem.vue";
 </script>
 
 <template>
   <LinkItem url="https://vernaillen.dev">
-    <template #icon>
-      <ToolingIcon />
-    </template>
     <template #heading>Vernaillen.dev</template>
     <template #subheading>Senior Full Stack Developer</template>
     freelance consultancy services
   </LinkItem>
 
   <LinkItem url="https://harmonics.be">
-    <template #icon>
-      <EcosystemIcon />
-    </template>
     <template #heading>Harmonics.be</template>
     <template #subheading>Healing power of sound & music</template>
     ecstatic dance, soundbaths, music production

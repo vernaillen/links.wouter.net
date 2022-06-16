@@ -1,6 +1,6 @@
 <template>
   <div class="item" @click="openUrl">
-    <i>
+    <i v-if="hasIcon()">
       <slot name="icon"></slot>
     </i>
     <div class="details">
@@ -17,12 +17,18 @@
 </template>
 
 <script setup lang="ts">
+import { useSlots } from "vue";
+
 const props = defineProps({
   url: {
     type: String,
     required: true,
   },
 });
+const slots = useSlots();
+const hasIcon = () => {
+  return !!slots["icon"];
+};
 const openUrl = () => {
   window.open(props.url, "_blank");
 };
@@ -31,12 +37,11 @@ const openUrl = () => {
 <style scoped>
 .item {
   margin-top: 1.5rem;
-  margin-left: 26px;
   display: flex;
   border: 1px solid var(--color-border);
   background: var(--color-background);
   border-radius: 8px;
-  padding: 15px 20px 15px 35px;
+  padding: 10px;
   cursor: pointer;
 }
 .item:hover {
@@ -45,7 +50,7 @@ const openUrl = () => {
 
 .details {
   flex: 1;
-  margin-left: 1rem;
+  text-align: center;
 }
 
 i {
@@ -54,9 +59,6 @@ i {
   place-content: center;
   color: var(--color-text);
 
-  top: calc(50% - 25px);
-  left: -26px;
-  position: absolute;
   border: 1px solid var(--color-border);
   background: var(--color-background);
   border-radius: 8px;
@@ -74,31 +76,5 @@ i {
 }
 .details p {
   padding: 3px 0;
-}
-
-.item:before {
-  content: " ";
-  border-left: 1px solid var(--color-border);
-  position: absolute;
-  left: 0;
-  bottom: calc(50% + 25px);
-  height: calc(50% - 25px);
-}
-
-.item:after {
-  content: " ";
-  border-left: 1px solid var(--color-border);
-  position: absolute;
-  left: 0;
-  top: calc(50% + 25px);
-  height: calc(50% - 25px);
-}
-
-.item:first-of-type:before {
-  display: none;
-}
-
-.item:last-of-type:after {
-  display: none;
 }
 </style>
