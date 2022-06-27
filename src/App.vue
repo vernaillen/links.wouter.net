@@ -2,11 +2,6 @@
 import { RouterView } from "vue-router";
 import IconLogo from "@/components/icons/IconLogo.vue";
 import SocialIcons from "@/components/SocialIcons.vue";
-
-const hostname = location.hostname;
-if (hostname != "links.wouter.net" && hostname != "localhost") {
-  window.location.href = "https://links.wouter.net";
-}
 </script>
 
 <template>

@@ -21,6 +21,12 @@ const routes = [
   },
 ];
 
-export const createApp = ViteSSG(App, { routes }, ({ app }) => {
+export const createApp = ViteSSG(App, { routes }, ({ app, isClient }) => {
   app.component("font-awesome-icon", FontAwesomeIcon);
+  if (isClient) {
+    const hostname = window.location.hostname;
+    if (hostname != "links.wouter.net" && hostname != "localhost") {
+      window.location.href = "https://links.wouter.net";
+    }
+  }
 });
