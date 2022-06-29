@@ -8,7 +8,7 @@
         <a :href="url" target="_blank">
           <slot name="heading"></slot>
         </a>
-        :
+        <br />
         <span class="sub"> <slot name="subheading"></slot> </span><br />
         <p>
           <slot></slot>
@@ -48,7 +48,7 @@ const openUrl = () => {
   display: flex;
   background-color: black;
   border-radius: 8px;
-  padding: 14px;
+  padding: 14px 10px;
   cursor: pointer;
 
   margin: 0;
@@ -82,14 +82,16 @@ i {
 }
 
 .details a {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 .details .sub {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--color-heading);
 }
 .details p {
+  font-size: 0.8rem;
   padding: 3px 0;
+  color: var(--color-text);
 }
 </style>
