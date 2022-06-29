@@ -1,17 +1,19 @@
 <template>
-  <div class="item" @click="openUrl">
-    <i v-if="hasIcon()">
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <a :href="url" target="_blank">
-        <slot name="heading"></slot>
-      </a>
-      :
-      <span class="sub"> <slot name="subheading"></slot> </span><br />
-      <p>
-        <slot></slot>
-      </p>
+  <div class="itemWrapper">
+    <div class="item" @click="openUrl">
+      <i v-if="hasIcon()">
+        <slot name="icon"></slot>
+      </i>
+      <div class="details">
+        <a :href="url" target="_blank">
+          <slot name="heading"></slot>
+        </a>
+        :
+        <span class="sub"> <slot name="subheading"></slot> </span><br />
+        <p>
+          <slot></slot>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,17 +37,30 @@ const openUrl = () => {
 </script>
 
 <style scoped>
-.item {
+.itemWrapper {
+  position: relative;
+  overflow: hidden;
   margin-top: 1.5rem;
-  display: flex;
   border: 1px solid var(--color-border);
-  background: var(--color-background);
+}
+
+.itemWrapper .item {
+  display: flex;
+  background-color: black;
   border-radius: 8px;
   padding: 10px;
   cursor: pointer;
+
+  margin: 0;
+  max-width: 100%;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
-.item:hover {
-  background-color: black;
+.itemWrapper .item:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .details {

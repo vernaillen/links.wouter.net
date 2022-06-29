@@ -15,7 +15,10 @@ import SocialIcons from "@/components/SocialIcons.vue";
         alt="Wouter Vernaillen Profile Image"
         class="profileImage"
       />
-      <p>Sound alchemist, Freelance Java/JS Developer, Forever learning...</p>
+      <p>
+        Wouter Vernaillen<br />Sound alchemist, Freelance Java/JS Developer,
+        Forever learning...
+      </p>
       <SocialIcons />
     </div>
   </header>
