@@ -30,9 +30,9 @@ import SocialIcons from "@/components/SocialIcons.vue";
 @import "@/assets/base.css";
 
 #app {
-  max-width: 680px;
+  max-width: 620px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 
   font-weight: normal;
 }

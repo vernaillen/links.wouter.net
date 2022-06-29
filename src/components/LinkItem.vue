@@ -48,7 +48,7 @@ const openUrl = () => {
   display: flex;
   background-color: black;
   border-radius: 8px;
-  padding: 10px;
+  padding: 14px;
   cursor: pointer;
 
   margin: 0;
