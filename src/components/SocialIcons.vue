@@ -6,7 +6,7 @@
       rel="noopener"
       target="_blank"
     >
-      <font-awesome-icon :icon="['fab', 'github']" class="animated bounceIn" />
+      <font-awesome-icon :icon="['fab', 'github']" class="animated fadeIn" />
     </a>
     <a
       class="ud-text-body-color hover:ud-text-primary ud-mx-3"
@@ -14,10 +14,7 @@
       rel="noopener"
       target="_blank"
     >
-      <font-awesome-icon
-        :icon="['fab', 'linkedin']"
-        class="animated bounceIn"
-      />
+      <font-awesome-icon :icon="['fab', 'linkedin']" class="animated fadeIn" />
     </a>
     <a
       class="ud-text-body-color hover:ud-text-primary ud-mx-3"
@@ -25,10 +22,7 @@
       rel="noopener"
       target="_blank"
     >
-      <font-awesome-icon
-        :icon="['fab', 'instagram']"
-        class="animated bounceIn"
-      />
+      <font-awesome-icon :icon="['fab', 'instagram']" class="animated fadeIn" />
     </a>
     <a
       class="ud-text-body-color hover:ud-text-primary ud-mx-3"
@@ -36,7 +30,7 @@
       rel="noopener"
       target="_blank"
     >
-      <font-awesome-icon :icon="['fab', 'twitter']" class="animated bounceIn" />
+      <font-awesome-icon :icon="['fab', 'twitter']" class="animated fadeIn" />
     </a>
   </div>
 </template>

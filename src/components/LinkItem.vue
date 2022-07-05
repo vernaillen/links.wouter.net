@@ -1,39 +1,59 @@
 <template>
   <div class="itemWrapper">
-    <div class="item" @click="openUrl">
+    <font-awesome-icon
+      v-if="!expanded"
+      @click="toggle"
+      :icon="['fas', 'angle-right']"
+    />
+    <font-awesome-icon
+      v-if="expanded"
+      @click="toggle"
+      :icon="['fas', 'angle-down']"
+    />
+    <div class="item" @click="toggle">
       <i v-if="hasIcon()">
         <slot name="icon"></slot>
       </i>
       <div class="details">
-        <a :href="url" target="_blank">
+        <a href="#">
           <slot name="heading"></slot>
         </a>
         <br />
         <span class="sub"> <slot name="subheading"></slot> </span><br />
-        <p>
-          <slot></slot>
-        </p>
       </div>
     </div>
-    <div v-if="mixcloud" class="player">
-      <iframe width="100%" height="60" :src="mixcloud" frameborder="0"></iframe>
-    </div>
-    <div v-if="youtube" class="player">
-      <iframe
-        width="100%"
-        height="315"
-        :src="youtube"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+    <div v-if="expanded" class="itemExpanded animated fadeIn">
+      <slot></slot>
+      <div v-if="mixcloud" class="player">
+        <iframe
+          width="100%"
+          height="60"
+          :src="mixcloud"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div v-if="youtube" class="player">
+        <iframe
+          width="100%"
+          height="315"
+          :src="youtube"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <button @click="openUrl">Open link</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useSlots } from "vue";
+import { nextTick, ref, useSlots, watch } from "vue";
+import { useLinkItemState } from "../stores/linkItemState";
+import { storeToRefs } from "pinia";
+const linkItemState = useLinkItemState();
+const { isAllCollapsed } = storeToRefs(linkItemState);
 
 const props = defineProps({
   url: {
@@ -49,6 +69,7 @@ const props = defineProps({
     required: false,
   },
 });
+
 const slots = useSlots();
 const hasIcon = () => {
   return !!slots["icon"];
@@ -56,6 +77,16 @@ const hasIcon = () => {
 const openUrl = () => {
   window.open(props.url, "_blank");
 };
+const expanded = ref(false);
+const toggle = async () => {
+  linkItemState.collapseAll();
+  await nextTick();
+  expanded.value = !expanded.value;
+  if (expanded.value) linkItemState.expandItem();
+};
+watch(isAllCollapsed, (newVal) => {
+  if (newVal) expanded.value = false;
+});
 </script>
 
 <style scoped>
@@ -64,6 +95,14 @@ const openUrl = () => {
   overflow: hidden;
   margin-top: 1.5rem;
   border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+}
+.itemWrapper svg.svg-inline--fa {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  cursor: pointer;
 }
 
 .itemWrapper .item {
@@ -71,18 +110,30 @@ const openUrl = () => {
   background-color: black;
   border-radius: 8px;
   padding: 10px;
-  cursor: pointer;
 
   margin: 0;
   max-width: 100%;
   -moz-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .itemWrapper .item:hover {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -moz-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+.itemWrapper .itemExpanded {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.itemWrapper .itemExpanded button {
+  background-color: hsla(53, 70.5%, 35.9%, 1);
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 0.2rem;
 }
 
 .details {
@@ -104,7 +155,7 @@ i {
 }
 
 .details a {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 .details .sub {

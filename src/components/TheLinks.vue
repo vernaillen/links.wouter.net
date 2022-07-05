@@ -6,13 +6,21 @@ import LinkItem from "./LinkItem.vue";
   <LinkItem url="https://vernaillen.dev">
     <template #heading>Vernaillen.dev</template>
     <template #subheading>Senior Full Stack Developer</template>
-    a brand new website for my freelance consultancy services
+    <p>a brand new website for my freelance consultancy services</p>
   </LinkItem>
 
   <LinkItem url="https://harmonics.be">
     <template #heading>Harmonics.be</template>
     <template #subheading>Healing power of sound & music</template>
-    ecstatic dance, soundbaths, music production
+    <p>ecstatic dance, soundbaths, music production</p>
+  </LinkItem>
+
+  <LinkItem url="https://vue-audiomotion-analyzer.dev/">
+    <template #heading>Vue AudioMotion Analyzer</template>
+    <template #subheading
+      >high-resolution real-time audio spectrum analyzer</template
+    >
+    <p>Vue plugin wrapping Henrique Vianna's audioMotion-analyzer</p>
   </LinkItem>
 
   <LinkItem
