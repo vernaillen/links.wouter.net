@@ -55,6 +55,41 @@ import { storeToRefs } from "pinia";
 const linkItemState = useLinkItemState();
 const { isAllCollapsed } = storeToRefs(linkItemState);
 
+function easeInOutQuad(
+  currentTime: number,
+  start: number,
+  change: number,
+  duration: number
+) {
+  currentTime /= duration / 2;
+  if (currentTime < 1) return (change / 2) * currentTime * currentTime + start;
+  currentTime--;
+  return (-change / 2) * (currentTime * (currentTime - 2) - 1) + start;
+}
+
+function scrollToItem(el: PointerEvent) {
+  if (el.screenY > window.innerHeight) {
+    const to = el.screenY;
+    const duration = 500;
+    const element = document.documentElement;
+    const start = element.scrollTop;
+    const change = to - start;
+    const increment = 20;
+    let currentTime = 0;
+
+    const animateScroll = () => {
+      currentTime += increment;
+
+      const val = easeInOutQuad(currentTime, start, change, duration);
+
+      element.scrollTop = val;
+
+      if (currentTime < duration) setTimeout(animateScroll, increment);
+    };
+    animateScroll();
+  }
+}
+
 const props = defineProps({
   url: {
     type: String,
@@ -78,12 +113,13 @@ const openUrl = () => {
   window.open(props.url, "_blank");
 };
 const expanded = ref(false);
-const toggle = async () => {
+const toggle = async (el: PointerEvent) => {
   linkItemState.collapseAll();
   if (!expanded.value) {
     await nextTick();
     expanded.value = !expanded.value;
     linkItemState.expandItem();
+    scrollToItem(el);
   }
 };
 watch(isAllCollapsed, (newVal) => {
