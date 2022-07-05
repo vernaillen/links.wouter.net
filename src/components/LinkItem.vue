@@ -15,6 +15,20 @@
         </p>
       </div>
     </div>
+    <div v-if="mixcloud" class="player">
+      <iframe width="100%" height="60" :src="mixcloud" frameborder="0"></iframe>
+    </div>
+    <div v-if="youtube" class="player">
+      <iframe
+        width="100%"
+        height="315"
+        :src="youtube"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </template>
 
@@ -25,6 +39,14 @@ const props = defineProps({
   url: {
     type: String,
     required: true,
+  },
+  mixcloud: {
+    type: String,
+    required: false,
+  },
+  youtube: {
+    type: String,
+    required: false,
   },
 });
 const slots = useSlots();
@@ -48,7 +70,7 @@ const openUrl = () => {
   display: flex;
   background-color: black;
   border-radius: 8px;
-  padding: 14px 10px;
+  padding: 10px;
   cursor: pointer;
 
   margin: 0;

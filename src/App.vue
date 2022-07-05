@@ -31,7 +31,7 @@ import SocialIcons from "@/components/SocialIcons.vue";
 
 #app {
   max-width: 620px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   padding: 0 1rem;
 
   font-weight: normal;
