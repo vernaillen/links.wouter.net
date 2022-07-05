@@ -6,7 +6,10 @@ import LinkItem from "./LinkItem.vue";
   <LinkItem url="https://vernaillen.dev">
     <template #heading>Vernaillen.dev</template>
     <template #subheading>Senior Full Stack Developer</template>
-    <p>a brand new website for my freelance consultancy services</p>
+    <p>
+      a brand new website for my freelance consultancy services as a full stack
+      java developer
+    </p>
   </LinkItem>
 
   <LinkItem url="https://harmonics.be">

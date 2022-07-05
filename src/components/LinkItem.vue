@@ -80,9 +80,11 @@ const openUrl = () => {
 const expanded = ref(false);
 const toggle = async () => {
   linkItemState.collapseAll();
-  await nextTick();
-  expanded.value = !expanded.value;
-  if (expanded.value) linkItemState.expandItem();
+  if (!expanded.value) {
+    await nextTick();
+    expanded.value = !expanded.value;
+    linkItemState.expandItem();
+  }
 };
 watch(isAllCollapsed, (newVal) => {
   if (newVal) expanded.value = false;
@@ -162,9 +164,9 @@ i {
   font-size: 0.9rem;
   color: var(--color-heading);
 }
-.details p {
-  font-size: 0.8rem;
-  padding: 3px 0;
-  color: var(--color-text);
+</style>
+<style>
+.itemWrapper p {
+  padding: 20px;
 }
 </style>
