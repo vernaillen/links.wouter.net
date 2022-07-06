@@ -35,6 +35,9 @@
   --color-text: var(--vt-c-text-light-2);
   --color-text-button: var(--vt-c-text-dark-1);
 
+  --color-logo-left: #231F20;
+  --color-logo-right: #9C8E1B;
+
   --section-gap: 160px;
 }
 
@@ -51,6 +54,9 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
     --color-text-button: var(--vt-c-text-dark-1);
+
+    --color-logo-left: #9C8E1B;
+    --color-logo-right: #FFFFFF;
   }
 }
 
@@ -76,4 +82,31 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.fill-logo-left {
+  fill: var(--color-logo-left);
+}
+.fill-logo-right {
+  fill: var(--color-logo-right);
+}
+
+
+.fill-primary {
+  fill: #9C8E1B;
+}
+.fill-black {
+  fill: #231F20;
+}
+.fill-white {
+  fill: #FFFFFF;
+}
+.stroke-primary {
+  stroke: #9C8E1B;
+}
+.stroke-black {
+  stroke: #231F20;
+}
+.stroke-white {
+  stroke: #FFFFFF;
 }

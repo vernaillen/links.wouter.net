@@ -7,10 +7,13 @@
   >
     <g fill="none" opacity="transparent">
       <path
-        fill="#9C8E1B"
+        class="fill-logo-left"
         d="M0 0 H92 V184 H172 V0 H264 V184 H344 V0 H436 V276 H0 Z"
       />
-      <path fill="#FFFFFF" d="M490 0 H582 V184 H662 V0 H754 V276 H490 Z" />
+      <path
+        class="fill-logo-right"
+        d="M490 0 H582 V184 H662 V0 H754 V276 H490 Z"
+      />
     </g>
   </svg>
 </template>
