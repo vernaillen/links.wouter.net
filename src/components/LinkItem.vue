@@ -169,8 +169,9 @@ watch(isAllCollapsed, (newVal) => {
   background-color: hsla(53, 70.5%, 35.9%, 1);
   color: var(--color-text-button);
   cursor: pointer;
-  margin-bottom: 15px;
-  padding: 5px 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  font-weight: 600;
   border: 1px solid var(--color-border);
   border-radius: 0.2rem;
 }

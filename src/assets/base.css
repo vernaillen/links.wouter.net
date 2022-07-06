@@ -26,7 +26,7 @@
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
-  --color-background-transparent: rgba(255, 255, 255, 0.5);
+  --color-background-transparent: rgba(255, 255, 255, 0.6);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
