@@ -145,7 +145,7 @@ watch(isAllCollapsed, (newVal) => {
 
 .itemWrapper .item {
   display: flex;
-  background-color: black;
+  background-color: var(--color-background);
   border-radius: 8px;
   padding: 10px;
 
@@ -163,10 +163,11 @@ watch(isAllCollapsed, (newVal) => {
 }
 .itemWrapper .itemExpanded {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--color-background-transparent);
 }
 .itemWrapper .itemExpanded button {
   background-color: hsla(53, 70.5%, 35.9%, 1);
+  color: var(--color-text-button);
   cursor: pointer;
   margin-bottom: 15px;
   padding: 5px 10px;
