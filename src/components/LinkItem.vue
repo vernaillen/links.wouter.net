@@ -67,7 +67,7 @@ function easeInOutQuad(
   return (-change / 2) * (currentTime * (currentTime - 2) - 1) + start;
 }
 
-function scrollToItem(el: PointerEvent) {
+function scrollToItem(el: MouseEvent) {
   if (el.screenY > window.innerHeight) {
     const to = el.screenY;
     const duration = 500;
@@ -113,7 +113,7 @@ const openUrl = () => {
   window.open(props.url, "_blank");
 };
 const expanded = ref(false);
-const toggle = async (el: PointerEvent) => {
+const toggle = async (el: MouseEvent) => {
   linkItemState.collapseAll();
   if (!expanded.value) {
     await nextTick();
