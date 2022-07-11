@@ -1,6 +1,6 @@
 {
-  "name": "wouter.net",
-  "version": "0.0.0",
+  "name": "links.wouter.net",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite-ssg build",
