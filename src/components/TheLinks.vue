@@ -3,6 +3,12 @@ import LinkItem from "./LinkItem.vue";
 </script>
 
 <template>
+  <LinkItem url="https://harmonics.be">
+    <template #heading>Harmonics.be</template>
+    <template #subheading>Healing power of sound & music</template>
+    <p>ecstatic dance, soundbaths, music production</p>
+  </LinkItem>
+
   <LinkItem url="https://vernaillen.dev">
     <template #heading>Vernaillen.dev</template>
     <template #subheading>Senior Full Stack Developer</template>
@@ -10,12 +16,6 @@ import LinkItem from "./LinkItem.vue";
       a brand new website for my freelance consultancy services as a full stack
       java developer
     </p>
-  </LinkItem>
-
-  <LinkItem url="https://harmonics.be">
-    <template #heading>Harmonics.be</template>
-    <template #subheading>Healing power of sound & music</template>
-    <p>ecstatic dance, soundbaths, music production</p>
   </LinkItem>
 
   <LinkItem url="https://vue-audiomotion-analyzer.dev/">
