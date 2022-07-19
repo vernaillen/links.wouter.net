@@ -11,9 +11,6 @@
       :icon="['fas', 'angle-down']"
     />
     <div class="item" @click="toggle">
-      <i v-if="hasIcon()">
-        <slot name="icon"></slot>
-      </i>
       <div class="details">
         <a href="#">
           <slot name="heading"></slot>
@@ -29,6 +26,7 @@
           width="100%"
           height="60"
           :src="mixcloud"
+          title="mixcloud"
           frameborder="0"
         ></iframe>
       </div>
@@ -105,10 +103,6 @@ const props = defineProps({
   },
 });
 
-const slots = useSlots();
-const hasIcon = () => {
-  return !!slots["icon"];
-};
 const openUrl = () => {
   window.open(props.url, "_blank");
 };
