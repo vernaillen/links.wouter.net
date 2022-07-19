@@ -3,6 +3,16 @@ import LinkItem from "./LinkItem.vue";
 </script>
 
 <template>
+  <LinkItem
+    url="https://www.mixcloud.com/woutervernaillen/rebirth-ecstatic-dance-krimpvarkie-huisi/"
+    mixcloud="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fwoutervernaillen%2Frebirth-ecstatic-dance-krimpvarkie-huisi%2F"
+  >
+    <template #heading>Rebirth Ecstatic Dance</template>
+    <template #subheading
+      >DJ-set played during a private birthday/rebirth event</template
+    >
+  </LinkItem>
+
   <LinkItem url="https://harmonics.be">
     <template #heading>Harmonics.be</template>
     <template #subheading>Healing power of sound & music</template>
@@ -24,16 +34,6 @@ import LinkItem from "./LinkItem.vue";
       >high-resolution real-time audio spectrum analyzer</template
     >
     <p>Vue plugin wrapping Henrique Vianna's audioMotion-analyzer</p>
-  </LinkItem>
-
-  <LinkItem
-    url="https://www.mixcloud.com/woutervernaillen/rebirth-ecstatic-dance-krimpvarkie-huisi/"
-    mixcloud="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=%2Fwoutervernaillen%2Frebirth-ecstatic-dance-krimpvarkie-huisi%2F"
-  >
-    <template #heading>Rebirth Ecstatic Dance</template>
-    <template #subheading
-      >DJ-set played during a private birthday/rebirth event</template
-    >
   </LinkItem>
 
   <LinkItem
